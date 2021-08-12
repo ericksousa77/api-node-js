@@ -1,15 +1,16 @@
-const express = require('express');
+/*const express = require('express');
+const authMiddleware = require('./app/middlewares/auth');
 
-const authMiddleware = require('./middlewares/auth');
-
-const AuthController = require('./controllers/authController');
-const ProjectController = require('./controllers/projectController');
-
-
-/*import express from 'express';
-
-import AuthController from ('./controllers/authController');
+const AuthController = require('./app/controllers/authController');
+const ProjectController = require('./app/controllers/projectController');
 */
+
+
+import express from 'express';
+import AuthController from './app/controllers/authController';
+import ProjectController from './app/controllers/projectController';
+import authMiddleware from './app/middlewares/auth';
+
 
 const router = express.Router();
 
@@ -29,4 +30,4 @@ router.post('/auth/create',authController.create);
 router.post('/auth/authenticate',authController.authenticated);
 //router.post("/storenaver", naverController.store);
 
-module.exports = router;
+export default router; 

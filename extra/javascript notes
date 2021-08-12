@@ -1,0 +1,54 @@
+npm init -y    //cria o package json da dependencias do proj.
+
+
+
+yarn add express  //biblio. http
+
+yarn add @types/express
+
+yarn add body-parser  //ajuda o node a entender as req recebendo infos em json e entender os parametros enviados em urls
+
+yarn add cors   // restringe quem pode consumir a api
+
+yarn add morgan //gera um log de reqs do lado do servidor
+
+yarn add nodemon // reload apos modificações
+
+
+executar projeto:  npm start
+
+
+yarn add mongoose // biblioteca para usar a administrar o mongodb no node
+
+yarn add jsonwebtoken  //web token pra autenticação
+
+yarn add fs   //file system do node
+
+yarn add path   // caminho de pastas no node
+
+----------------------------------------
+
+how to use es6+ with babel
+
+npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/node
+
+
+create in root of repository a .babelrc file and adding the following code to it:
+
+{
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+
+
+-----------------------------------------
+
+
+
+
+
+
+
+
+

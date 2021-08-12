@@ -12,4 +12,4 @@ class jwtToken{
     }
 }
 
-module.exports = jwtToken;
+export default jwtToken;

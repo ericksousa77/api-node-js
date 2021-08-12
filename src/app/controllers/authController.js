@@ -1,7 +1,7 @@
 const express = require('express');
 const User = require('../models/user');
 const bcrypt = require('bcryptjs');
-const JwtToken = require('../services/jwtToken');
+const JwtToken = require('../../services/jwtToken');
 
 
 /*
