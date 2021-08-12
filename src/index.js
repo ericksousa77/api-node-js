@@ -4,6 +4,13 @@ const morgan = require('morgan');
 const cors = require('cors');
 const router = require('./routes');
 
+/*
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import router from './routes';
+*/
+
 const app = express();
 
 
