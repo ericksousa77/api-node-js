@@ -44,8 +44,9 @@ create in root of repository a .babelrc file and adding the following code to it
 
 -----------------------------------------
 
+yarn add nodemailer
 
-
+yarn add nodemailer-express-handlebars  // permite preencher uma variavel dentro do html mesmo 						    utilizando node
 
 
 

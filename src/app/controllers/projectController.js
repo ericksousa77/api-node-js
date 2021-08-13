@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 
 
 
@@ -10,4 +10,4 @@ class projectController {
     }
 }
 
-module.exports = projectController;
+export default projectController;
