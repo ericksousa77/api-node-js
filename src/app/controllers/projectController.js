@@ -69,7 +69,7 @@ class projectController {
 
             project.tasks = [];
 
-            await Task.remove({ project: project.id });
+            await Task.deleteMany({ project: project.id });
 
             await Promise.all(tasks.map(async task => { //o project.save espera que todas as tasks sejam criadas e salvas, para so depois salvar o project
                 const projectTask = new Task ({...task, project: project._id });
