@@ -14,7 +14,7 @@ class forgotPasswordController{
             const user = await User.findOne({email});
 
             if(!user)
-                res.status(400).send({error: 'user not found!'});
+                return res.status(400).send({error: 'user not found!'});
 
             const token = crypto.randomBytes(20).toString('hex');  //token aleatorio para validar a mudança de senha
 
@@ -44,10 +44,40 @@ class forgotPasswordController{
 
 
         }catch (err){
-            res.status(400).send({error: 'erro on forgot password, try again'})
+            return res.status(400).send({error: 'erro on forgot password, try again'})
 
         }
 
+    }
+
+    async resetPassword(req, res){
+
+        const { email, token, newpassword} = req.body;
+
+        try{
+            const user = await User.findOne({email})
+            .select('+passwordResetToken passwordResetExpires');
+
+            if(!user)
+                return res.status(400).send({error: 'user not found!'});
+            
+            if(token !== user.passwordResetToken)
+                return res.status(400).send({error: 'token invalid'});
+            
+            const now = new Date();
+
+            if(now > user.passwordResetExpires)
+                return res.status(400).send({error: 'token has expired, generate a new token'});
+
+            user.password = newpassword;
+
+            await user.save();
+
+            return res.send("password is successfully modified");
+
+        }catch(err){
+            res.status(400).send({error: 'cannot reset password, try again'});
+        }
     }
 }
 

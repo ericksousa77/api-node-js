@@ -34,5 +34,7 @@ router.post('/auth/authenticate',authController.authenticated);
 //rotas de forgot password
 router.post('/auth/forgot_password', forgotPasswordController.forgot);
 
+router.post('/auth/reset_password', forgotPasswordController.resetPassword);
+
 
 export default router; 
