@@ -1,6 +1,14 @@
 import mongoose from '../../database';
 
 
+/*
+Uma Task Possui:
+
+- 1 project
+- 1 user a quem ela foi atribuida
+
+*/
+
 const TaskSchema = new mongoose.Schema({
     title: {
         type:String,

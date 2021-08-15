@@ -1,6 +1,14 @@
 import mongoose from '../../database';
 
 
+/*
+Um Project Possui:
+
+- 1 usuário
+- Várias Tarefas
+
+*/
+
 const ProjectSchema = new mongoose.Schema({
     title: {
         type:String,
