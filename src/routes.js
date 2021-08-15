@@ -25,13 +25,22 @@ router.get('/',(req,res)=>{
 });
 
 //rotas de project 
-router.get('/project/create', authMiddleware , projectController.create);
+router.post('/projects/create', authMiddleware , projectController.create);
+
+router.get('/projects/:projectId', authMiddleware, projectController.show);
+router.get('/projects', authMiddleware, projectController.list);
+
+router.put('/projects/:projectId', authMiddleware, projectController.update);
+
+router.delete('/projects/:projectId', authMiddleware, projectController.delete);
+
 
 //rotas de user
 router.post('/auth/create',authController.create);
 router.post('/auth/authenticate',authController.authenticated);
 
-//rotas de forgot password
+
+//rotas de password control
 router.post('/auth/forgot_password', forgotPasswordController.forgot);
 
 router.post('/auth/reset_password', forgotPasswordController.resetPassword);
